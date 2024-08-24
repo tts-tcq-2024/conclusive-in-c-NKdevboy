@@ -3,7 +3,7 @@
 #include "TesterPrinters.h"
 
 unsigned short header_Tester = 0;
-BreachType breachType_Tester = 0;
+BreachType breachType_Tester = NORMAL;
 
 char Srtrecepient_Tester[50] = {0};
 char SrtbreachType_Tester[50]= {0};
