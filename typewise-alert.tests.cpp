@@ -63,3 +63,18 @@ TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermail)
     EXPECT_EQ((strcmp(SrtbreachType_Tester,"Hi, the temperature is too low\n")),0);
 }
 
+// production case coverage
+
+TEST(TypeWiseAlertTestSuite,MedActiveCoolingForController) 
+{
+    printerForControllerPtr = printerForControllerPtr;
+    BatteryCharacter Test1 = {MED_ACTIVE_COOLING,"BrandA"};
+    checkAndAlert(TO_CONTROLLER,Test1,1);
+}
+
+TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermail) 
+{
+    printerForEmailPtr = printerForEmailPtr;
+    BatteryCharacter Test1 = {HI_ACTIVE_COOLING,"BrandA"};
+    checkAndAlert(TO_EMAIL,Test1,-1);
+}
