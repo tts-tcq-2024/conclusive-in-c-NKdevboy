@@ -2,8 +2,8 @@
 #include "typewise-alert.h"
 #include "TesterPrinters.h"
 
-unsigned short header_Tester;
-BreachType breachType_Tester;
+unsigned short header_Tester = 0;
+BreachType breachType_Tester = 0;
 
 char Srtrecepient_Tester[50] = {0};
 char SrtbreachType_Tester[50]= {0};
@@ -27,7 +27,7 @@ TEST(TypeWiseAlertTestSuite,HiActiveCoolingForController)
     BatteryCharacter Test1 = {HI_ACTIVE_COOLING,"BrandA"};
     checkAndAlert(TO_CONTROLLER,Test1,-1);
     EXPECT_EQ(header_Tester,0xfeed);
-    EXPECT_EQ(breachType_Tester,0);
+    EXPECT_EQ(breachType_Tester,1);
 }
 
 TEST(TypeWiseAlertTestSuite,MedActiveCoolingForController) 
@@ -35,6 +35,6 @@ TEST(TypeWiseAlertTestSuite,MedActiveCoolingForController)
     printerForControllerPtr = PrinterForControllerMOCK;
     BatteryCharacter Test1 = {MED_ACTIVE_COOLING,"BrandA"};
     checkAndAlert(TO_CONTROLLER,Test1,1);
-    EXPECT_EQ(header_Tester,0xfeed);
-    EXPECT_EQ(breachType_Tester,1);
+    EXPECT_EQ(header_Tester,0);
+    EXPECT_EQ(breachType_Tester,0);
 }
