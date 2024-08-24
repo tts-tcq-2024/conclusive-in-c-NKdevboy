@@ -65,14 +65,14 @@ TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermail)
 
 // production case coverage
 
-TEST(TypeWiseAlertTestSuite,MedActiveCoolingForController) 
+TEST(TypeWiseAlertTestSuite,MedActiveCoolingForControllerPro) 
 {
     printerForControllerPtr = printerForControllerPtr;
     BatteryCharacter Test1 = {MED_ACTIVE_COOLING,"BrandA"};
     checkAndAlert(TO_CONTROLLER,Test1,1);
 }
 
-TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermail) 
+TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermailPro) 
 {
     printerForEmailPtr = printerForEmailPtr;
     BatteryCharacter Test1 = {HI_ACTIVE_COOLING,"BrandA"};
