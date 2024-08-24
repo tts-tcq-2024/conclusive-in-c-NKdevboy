@@ -13,7 +13,7 @@ const char * EmailContent[] = {"Hi, the temperature is too low\n","Hi, the tempe
 void sendToController(BreachType breachType)
 {
   const unsigned short header = 0xfeed;
-  printerForControllerPtr(header,breachType)
+  printerForControllerPtr(header,breachType);
 }
 
 void sendToEmail(BreachType breachType)
