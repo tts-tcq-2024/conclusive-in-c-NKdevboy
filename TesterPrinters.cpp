@@ -1,6 +1,6 @@
 
 #include <string.h>
-
+#include "typewise-alert.h"
 extern short header_Tester;
 extern BreachType breachType_Tester;
 
@@ -15,6 +15,6 @@ void PrinterForControllerMOCK(const unsigned short header,BreachType breachType)
 
 void PrinterForEmailMOCK(const char * recepient,const char *breachType)
 {
-  strcpy(recepient_Tester, recepient);
-  strcpy(breachType_Tester, breachType);
+  strcpy(Srtrecepient_Tester, recepient);
+  strcpy(breSrtbreachType_TesterachType_Tester, breachType);
 }
