@@ -16,5 +16,5 @@ void PrinterForControllerMOCK(const unsigned short header,BreachType breachType)
 void PrinterForEmailMOCK(const char * recepient,const char *breachType)
 {
   strcpy(Srtrecepient_Tester, recepient);
-  strcpy(breSrtbreachType_TesterachType_Tester, breachType);
+  strcpy(SrtbreachType_Tester, breachType);
 }
