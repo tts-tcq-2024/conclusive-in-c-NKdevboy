@@ -20,6 +20,11 @@ add_executable(
   cleancode
   typewise-alert.cpp
   typewise-alert.tests.cpp
+  alertTargetHandler.cpp
+  ProdunctionPrinters.cpp
+  TesterPrinters.cpp
+  typewise-alert.cpp
+  typewise-alert.tests.cpp
 )
 target_link_libraries(
   cleancode

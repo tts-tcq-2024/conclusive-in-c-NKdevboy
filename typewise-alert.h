@@ -6,14 +6,12 @@ typedef enum {
   MED_ACTIVE_COOLING
 } CoolingType;
 
+
 typedef enum {
   NORMAL,
   TOO_LOW,
   TOO_HIGH
 } BreachType;
-
-BreachType inferBreach(double value, double lowerLimit, double upperLimit);
-BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC);
 
 typedef enum {
   TO_CONTROLLER,
@@ -25,8 +23,10 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-void checkAndAlert(
-  AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
+typedef void (*alertTargetPtr_t)(BreachType);
+typedef void(*PrinterForControllerPtr_t)(const unsigned short,BreachType);
+typedef void(*PrinterForEmailPtr_t)(const char *,const char *);
 
-void sendToController(BreachType breachType);
-void sendToEmail(BreachType breachType);
+void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
+
+#define NumOfalertTarget 2
