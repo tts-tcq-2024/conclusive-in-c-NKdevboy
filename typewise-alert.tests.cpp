@@ -10,6 +10,7 @@ char Srtrecepient_Tester[50] = {0};
 char SrtbreachType_Tester[50]= {0};
 
 extern PrinterForControllerPtr_t printerForControllerPtr;
+extern PrinterForEmailPtr_t printerForEmailPtr ;
 
 void checkAndAlert( AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 
@@ -46,19 +47,19 @@ TEST(TypeWiseAlertTestSuite,MedActiveCoolingForController)
 
 TEST(TypeWiseAlertTestSuite,PassiveCoolingForControllerMail) 
 {
-    printerForControllerPtr = PrinterForControllerMOCK;
+    printerForEmailPtr = PrinterForEmailMOCK;
     BatteryCharacter Test1 = {PASSIVE_COOLING,"BrandA"};
     checkAndAlert(TO_EMAIL,Test1,40);
-    //EXPECT_EQ((strcmp(Srtrecepient_Tester,"a.b@c.com")),0);
-    //EXPECT_EQ((strcmp(SrtbreachType_Tester,"Hi, the temperature is too high\n")),0);
+    EXPECT_EQ((strcmp(Srtrecepient_Tester,"a.b@c.com")),0);
+    EXPECT_EQ((strcmp(SrtbreachType_Tester,"Hi, the temperature is too high\n")),0);
 }
 
 TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermail) 
 {
-    printerForControllerPtr = PrinterForControllerMOCK;
+    printerForEmailPtr = PrinterForEmailMOCK;
     BatteryCharacter Test1 = {HI_ACTIVE_COOLING,"BrandA"};
     checkAndAlert(TO_EMAIL,Test1,-1);
-    //EXPECT_EQ((strcmp(Srtrecepient_Tester,"a.b@c.com")),0);
-    //EXPECT_EQ((strcmp(SrtbreachType_Tester,"Hi, the temperature is too low\n")),0);
+    EXPECT_EQ((strcmp(Srtrecepient_Tester,"a.b@c.com")),0);
+    EXPECT_EQ((strcmp(SrtbreachType_Tester,"Hi, the temperature is too low\n")),0);
 }
 
