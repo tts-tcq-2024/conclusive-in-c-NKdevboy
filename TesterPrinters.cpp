@@ -4,8 +4,8 @@
 extern short header_Tester;
 extern BreachType breachType_Tester;
 
-extern char recepient_Tester[50];
-extern char breachType_Tester[50];
+extern char Srtrecepient_Tester[50];
+extern char SrtbreachType_Tester[50];
 
 void PrinterForControllerMOCK(const unsigned short header,BreachType breachType)
 {

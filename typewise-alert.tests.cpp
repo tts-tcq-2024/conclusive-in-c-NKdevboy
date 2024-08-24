@@ -5,8 +5,8 @@
 unsigned short header_Tester;
 BreachType breachType_Tester;
 
-char recepient_Tester[50] = {0};
-char breachType_Tester[50]= {0};
+char Srtrecepient_Tester[50] = {0};
+char SrtbreachType_Tester[50]= {0};
 
 extern PrinterForControllerPtr_t printerForControllerPtr;
 
