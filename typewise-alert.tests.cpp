@@ -69,7 +69,7 @@ TEST(TypeWiseAlertTestSuite,MedActiveCoolingForControllerPro)
 {
     printerForControllerPtr = printerForControllerPtr;
     BatteryCharacter Test1 = {MED_ACTIVE_COOLING,"BrandA"};
-    checkAndAlert(TO_CONTROLLER,Test1,1);
+    checkAndAlert(TO_CONTROLLER,Test1,50);
 }
 
 TEST(TypeWiseAlertTestSuite,HiActiveCoolingForControllermailPro) 
